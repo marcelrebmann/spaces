@@ -1,0 +1,67 @@
+<div class="container-content">
+    <app-loading-spinner *ngIf="showLoading"></app-loading-spinner>
+    <app-container-header [titleKey]="containerTitleKey"
+                          [subheaderText]="'#' + taskModel._id"
+                          [showSubheader]="mode === viewMode.EDIT"
+                          subheaderIconClass="mdi mdi-clipboard-check-outline type-icon task"></app-container-header>
+    <form (ngSubmit)="handleSubmit()">
+        <label class="required"
+               for="task-name">{{"task.fields.name" | translate}}</label>
+        <input #name="ngModel"
+               placeholder="{{'task.placeholder.name' | translate}}"
+               id="task-name"
+               name="name"
+               required
+               pattern=".+"
+               appAutofocus
+               [(ngModel)]="taskModel.name">
+        <div [hidden]="name.valid || name.pristine"
+             class="input-hint error">{{"task.hints.taskNameInvalid" | translate}}</div>
+        <label class="required"
+               for="task-description">{{"task.fields.description" | translate}}</label>
+        <textarea #description="ngModel"
+                  id="task-description"
+                  name="description"
+                  placeholder="{{'task.placeholder.description' | translate}}"
+                  pattern=".+"
+                  rows="5"
+                  required
+                  [(ngModel)]="taskModel.description"></textarea>
+        <div [hidden]="description.valid || description.pristine"
+             class="input-hint error">{{"task.hints.taskDescriptionInvalid" | translate}}</div>
+        <label class="required"
+               for="task-module">{{"task.fields.module" | translate}}</label>
+        <select id="task-module"
+                name="module"
+                required
+                [(ngModel)]="taskModel.module">
+            <option disabled
+                    value=""
+                    [selected]="mode === viewMode.CREATE">{{'task.placeholder.module' | translate}}</option>
+            <option *ngFor="let m of allModules$ | async"
+                    [value]="m._id"
+                    [selected]="m._id === taskModel.module">{{m.name}}</option>
+        </select>
+        <label class="required"
+               for="task-column">{{"task.fields.status" | translate}}</label>
+        <select id="task-column"
+                name="column"
+                required
+                [(ngModel)]="taskModel.column">
+            <option disabled
+                    value=""
+                    [selected]="mode === viewMode.CREATE">{{'task.placeholder.column' | translate}}</option>
+            <option *ngFor="let column of selectableColumns$ | async"
+                    [value]="column.id"
+                    [disabled]="column.limitReached"
+                    [selected]="taskModel.column === column.id">
+                {{column.name}} {{column.limit ? "(" + column.taskCount + "/" + column.limit + ")" : ""}}
+            </option>
+        </select>
+        <button type="submit"
+                [disabled]="!taskModel.name || !taskModel.column || !taskModel.module || !taskModel.description">
+            {{(mode === viewMode.CREATE ? "task.create.submit" : "task.edit.submit") | translate}}
+        </button>
+    </form>
+</div>
+

@@ -1,0 +1,18 @@
+<div class="task-container">
+    <div class="task-title-info">
+        <i class="mdi mdi-clipboard-check-outline type-icon"></i>
+        <span>{{task.name}}</span>
+    </div>
+    <div class="task-actions">
+            <button class="icon-button sm"
+                    title="{{'home.buttons.editTask' | translate}}"
+                    (click)="emitEditClick()">
+                <i class="mdi mdi-pen"></i>
+            </button>
+            <button class="icon-button sm error"
+                    title="{{'home.buttons.deleteTask' | translate}}"
+                    (click)="emitDeleteClick()">
+                <i class="mdi mdi-delete"></i>
+            </button>
+    </div>
+</div>

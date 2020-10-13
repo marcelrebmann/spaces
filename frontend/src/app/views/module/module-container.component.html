@@ -1,0 +1,26 @@
+<div class="container-content">
+    <app-loading-spinner *ngIf="showLoading"></app-loading-spinner>
+    <app-container-header [titleKey]="containerTitleKey"
+                          [subheaderText]="'#' + moduleModel._id"
+                          [showSubheader]="mode === viewMode.EDIT"
+                          subheaderIconClass="mdi mdi-cube-outline type-icon module"></app-container-header>
+    <form (ngSubmit)="handleSubmit()">
+        <label class="required"
+               for="module-name">{{"module.fields.name" | translate}}</label>
+        <input #name="ngModel"
+               placeholder="{{'module.placeholder.name' | translate}}"
+               id="module-name"
+               name="name"
+               required
+               pattern=".+"
+               appAutofocus
+               [(ngModel)]="moduleModel.name">
+        <div [hidden]="name.valid || name.pristine"
+             class="input-hint error">{{"module.hints.moduleNameInvalid" | translate}}</div>
+        <button type="submit"
+                [disabled]="!moduleModel.name">
+            {{(mode === viewMode.CREATE ? "module.create.submit" : "module.edit.submit") | translate}}
+        </button>
+    </form>
+</div>
+

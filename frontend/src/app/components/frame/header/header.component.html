@@ -1,0 +1,32 @@
+<div class="title-row">
+    <div class="mobile-menu-toggle"
+         [class.open]="mobileMenuIsOpen"
+         (click)="toggleMobileMenu()">
+        <div [@openCloseTop]="mobileMenuIsOpen ? 'open' : 'closed'"></div>
+        <div [@fadeOut]="mobileMenuIsOpen ? 'open' : 'closed'"></div>
+        <div [@openCloseBottom]="mobileMenuIsOpen ? 'open' : 'closed'"></div>
+    </div>
+    <div class="logo-container">
+        <span class="main-logo"></span>
+    </div>
+    <div class="mobile-whitespace"></div>
+    <nav [class.open]="mobileMenuIsOpen">
+        <div *ngFor="let item of items"
+             class="menu-item"
+             [class.active]="activeRoute.match(item.link)"
+             (click)="selectItem(item)">
+            <span>{{item.title | translate}}</span>
+        </div>
+        <div class="active-marker"
+             [style.left]="(activeMenuItemIndex * (100 / items.length)) + '%'"
+             [style.width]="(100 / items.length) + '%'"></div>
+    </nav>
+
+    <div class="language-switch-container">
+        <button class="inverted"
+                (click)="changeLanguage()">
+            <i class="mdi mdi-web"></i>
+            <span>{{"navigation.changeLanguage" | translate}}</span>
+        </button>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="widget-container">
+    <div class="widget-title"
+         innerHTML="{{'home.widgets.column.title' | translate}}"></div>
+    <div class="widget-action-container">
+        <div class="widget-action"
+             (click)="emitCustomColumnSelection()">
+            <div class="icon round">
+                <i class="mdi mdi-table-column-plus-after"></i>
+            </div>
+            <span>{{"home.widgets.column.custom" | translate}}</span>
+        </div>
+        <div class="widget-action"
+             (click)="emitKanbanColumnsSelection()">
+            <div class="icon round">
+                <i class="mdi mdi-table-large"></i>
+            </div>
+            <span>{{"home.widgets.column.kanban" | translate}}</span>
+        </div>
+    </div>
+</div>

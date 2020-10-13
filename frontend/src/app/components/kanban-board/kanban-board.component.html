@@ -1,0 +1,18 @@
+<div>
+    <app-board-header [columns]="columns"
+                      (createModuleSelected)="openCreateModuleView()"
+                      (createColumnSelected)="openCreateColumnView()"
+                      (deleteColumnSelected)="emitColumnDeletion($event)"
+                      (editColumnSelected)="openEditColumnView($event)"></app-board-header>
+    <app-create-column-widget *ngIf="!data?.length && !columns?.length"
+                              (createCustomColumn)="openCreateColumnView()"
+                              (createKanbanColumns)="emitCreateKanbanLayout()"></app-create-column-widget>
+    <app-create-module-widget *ngIf="columns?.length && !data?.length"
+                              (createModule)="openCreateModuleView()"></app-create-module-widget>
+    <app-swimlane *ngFor="let story of data"
+                  [data]="story"
+                  [columnLimitState]="columns"
+                  (deleteModuleClicked)="emitModuleDeletion($event)"
+                  (deleteTaskClicked)="emitTaskDeletion($event)"
+                  (taskDropped)="emitTaskDropped($event)"></app-swimlane>
+</div>

@@ -1,0 +1,146 @@
+{
+    "common": {
+        "title": "Awesome Kanban Board",
+        "module": "Module",
+        "edit": "Edit",
+        "delete": "Delete"
+    },
+    "navigation": {
+        "home": "Home",
+        "createModule": "Create Module",
+        "createTask": "Create Task",
+        "createColumn": "Create Column",
+        "changeLanguage": "DE"
+    },
+    "home": {
+        "title": "Board",
+        "buttons": {
+            "addTask": "Add Task",
+            "deleteModule": "Delete Module",
+            "editModule": "Edit Module",
+            "editTask": "Edit Task",
+            "deleteTask": "Delete Task",
+            "createModule": "New Module",
+            "createColumn": "New Column"
+        },
+        "widgets": {
+            "column": {
+                "title": "Oh, looks pretty empty!<br>Start by adding a column to your board or choose to create a default Kanban-Board layout.",
+                "custom": "Add Column",
+                "kanban": "Kanban-Board"
+            },
+            "module": {
+                "title": "Add a module to the board to create tasks and to track their progress.",
+                "addModule": "Add Module"
+            }
+        }
+    },
+    "task": {
+        "fields": {
+            "name": "Name",
+            "description": "Description",
+            "module": "Module",
+            "status": "Status"
+        },
+        "placeholder": {
+            "name": "Name the task...",
+            "description": "Describe the task...",
+            "module": "Choose a module...",
+            "column": "Choose a status..."
+        },
+        "edit": {
+            "title": "Edit Task",
+            "submit": "Update Task"
+        },
+        "create": {
+            "title": "New Task",
+            "submit": "Create Task"
+        },
+        "hints": {
+            "taskNameInvalid": "Please enter a name for the task.",
+            "taskDescriptionInvalid": "Please enter a description for the task."
+        }
+    },
+    "module": {
+        "fields": {
+            "name": "Name"
+        },
+        "placeholder": {
+            "name": "Name the module..."
+        },
+        "edit": {
+            "title": "Edit Module",
+            "submit": "Update Module"
+        },
+        "create": {
+            "title": "New Module",
+            "submit": "Create Module"
+        },
+        "hints": {
+            "moduleNameInvalid": "Please enter a name for the module."
+        }
+    },
+    "column": {
+        "fields": {
+            "name": "Name",
+            "limit": "Task-Limit"
+        },
+        "placeholder": {
+            "name": "Name the column...",
+            "limit": "Maximum contained Tasks"
+        },
+        "edit": {
+            "title": "Edit Column",
+            "submit": "Update Column"
+        },
+        "create": {
+            "title": "New Column",
+            "submit": "Create Column"
+        },
+        "hints": {
+            "columnNameInvalid": "Please enter a name for the column.",
+            "columnLimitNegative": "The limit must be greater or equal than 0. (0 means no limit)"
+        }
+    },
+    "toasts": {
+        "success": {
+            "createTask": "Task created.",
+            "updateTask": "Task has been updated.",
+            "deleteTask": "Task deleted.",
+            "createModule": "Module created.",
+            "updateModule": "Module has been updated.",
+            "deleteModule": "Module deleted.",
+            "createColumn": "Column created.",
+            "updateColumn": "Column has been updated.",
+            "deleteColumn": "Column deleted.",
+            "kanbanColumnsCreated": "Kanban layout created."
+        },
+        "error": {
+            "loadAllDataFailed": "Loading data failed.",
+            "loadAllTasksFailed": "Loading Tasks failed.",
+            "loadAllModulesFailed": "Loading Modules failed.",
+            "loadAllColumnsFailed": "Loading Columns failed.",
+            "noTaskFound": "Task [ {{taskId}} ] was not found.",
+            "noModuleFound": "Module [ {{moduleId}} ] was not found.",
+            "noColumnFound": "Column [ {{columnId}} ] was not found.",
+            "createTaskFailed": "Task creation failed.",
+            "updateTaskFailed": "Task update failed.",
+            "deleteTaskFailed": "Task deletion failed.",
+            "createModuleFailed": "Module creation failed.",
+            "updateModuleFailed": "Module update failed.",
+            "deleteModuleFailed": "Module deletion failed.",
+            "createColumnFailed": "Column creation failed.",
+            "updateColumnFailed": "Column update failed.",
+            "deleteColumnFailed": "Column deletion failed.",
+            "columnContainsEntries": "Column cannot be deleted, because it still contains Tasks.",
+            "timeout": "Timeout. Could not connect to Server.",
+            "taskNameExists": "A Task with this name exists already. Please choose another one.",
+            "moduleNameExists": "A Module with this name exists already. Please choose another one.",
+            "columnNameExists": "A Column with this name exists already. Please choose another one.",
+            "createKanbanColumnsFailed": "Kanban columns could not be created."
+        },
+        "info": {
+            "deleteModuleConfirm": "Do you really want to delete the module? Tasks will also be deleted."
+        }
+    }
+}

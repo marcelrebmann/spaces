@@ -1,0 +1,102 @@
+@import "~src/colors";
+
+:host {
+    display: flex;
+    flex: 1;
+}
+
+div.board-header-container {
+    display: flex;
+    flex: 1;
+    top: 0;
+
+    div.title-column {
+        color: $background;
+        background-color: $toast-bg;
+        border-right: 1px solid $toast-bg;
+    }
+
+    div.column {
+        min-height: 50px;
+        height: 50px;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+        &:not(.title-column) {
+            border-bottom: 1px solid $background-darker;
+            box-shadow: 0 -1px 0 0 $shadow-lighter;
+            background-color: $white;
+        }
+
+        &:nth-of-type(2) {
+            border-left: none;
+        }
+
+        &:last-of-type {
+            border-right: 1px solid $background-darker;
+        }
+
+        &.limit-reached {
+            background-color: $error;
+        }
+
+        div.options-menu {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 51px;
+            left: 0;
+            background-color: $white;
+            height: 0;
+            width: 100%;
+            transition: height .2s;
+            box-shadow: 0 4px 4px 0 $shadow;
+
+            div.menu-entry {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                overflow: hidden;
+                padding: 0 10px;
+                height: 50px;
+                user-select: none;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $background-lighter;
+                }
+            }
+        }
+
+        button.menu-toggle {
+            transition: transform 0.2s;
+            transform: rotate(0deg);
+        }
+
+        &.open {
+
+            div.options-menu {
+                height: 100px;
+            }
+
+            div.menu-entry:not(:last-of-type) {
+                border-bottom: 1px solid $background;
+            }
+
+            button.menu-toggle {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    div.column-actions {
+        display: flex;
+        align-items: center;
+
+        span {
+            margin-right: 10px;
+        }
+    }
+}

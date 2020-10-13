@@ -1,0 +1,46 @@
+<div class="board-header-container">
+    <div class="column title-column">
+        <span class="title"> {{"common.module" | translate}}</span>
+        <div>
+            <button class="icon-button round sm"
+                    title="{{'home.buttons.createModule' | translate}}"
+                    (click)="emitCreateModule()">
+                <i class="mdi mdi-plus"></i>
+            </button>
+            <button class="icon-button round sm"
+                    title="{{'home.buttons.createColumn' | translate}}"
+                    (click)="emitCreateColumn()">
+                <i class="mdi mdi-table-column-plus-after"></i>
+            </button>
+        </div>
+    </div>
+    <div *ngFor="let column of columns, let i = index"
+         class="column"
+         [class.open]="openedMenuId === i"
+         [class.limit-reached]="column.limitReached">
+        <span class="title">{{column.name}}</span>
+        <div class="column-actions">
+            <span>{{column.limit ? "(" + column.taskCount + "/" + column.limit + ")" : ""}}</span>
+            <button class="icon-button round sm menu-toggle"
+                    (click)="toggleMenu(i)">
+                <i class="mdi mdi-chevron-down"></i>
+            </button>
+        </div>
+        <div class="options-menu">
+            <div class="menu-entry"
+                 (click)="emitEditColumn(column.id)">
+                <span>{{"common.edit" | translate}}</span>
+                <div class="icon round sm primary">
+                    <i class="mdi mdi-pen"></i>
+                </div>
+            </div>
+            <div class="menu-entry"
+                 (click)="emitColumnDeleteSelection(column.id)">
+                <span>{{"common.delete" | translate}}</span>
+                <div class="icon round sm error">
+                    <i class="mdi mdi-delete"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

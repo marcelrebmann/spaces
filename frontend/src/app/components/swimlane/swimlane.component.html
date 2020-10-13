@@ -1,0 +1,42 @@
+<div class="column title-column">
+    <div class="module-title-wrapper">
+        <i class="mdi mdi-cube-outline type-icon"></i>
+        <span>{{data.module.name}}</span>
+    </div>
+    <div class="module-action-button-container">
+        <div>
+            <button class="icon-button white-hover md error"
+                    title="{{'home.buttons.deleteModule' | translate}}"
+                    (click)="emitModuleDeletion(data.module._id)">
+                <i class="mdi mdi-delete"></i>
+            </button>
+            <button class="icon-button white-hover md"
+                    title="{{'home.buttons.editModule' | translate}}"
+                    (click)="openEditModuleView(data.module._id)">
+                <i class="mdi mdi-pen"></i>
+            </button>
+        </div>
+        <button class="icon-button white-hover md success"
+                title="{{'home.buttons.addTask' | translate}}"
+                (click)="openCreateTaskView()">
+            <i class="mdi mdi-library-plus"></i>
+        </button>
+    </div>
+</div>
+<div *ngFor="let col of data.columns, let i = index"
+     [id]="data.module._id + '_' + col.column._id"
+     cdkDropList
+     cdkDropListSortingDisabled
+     [cdkDropListConnectedTo]="getConnectedDragLists(col.column._id)"
+     [cdkDropListEnterPredicate]="respectColumnLimitPredicate"
+     [cdkDropListData]="col.tasks"
+     (cdkDropListDropped)="handleTaskDropped($event)"
+     class="column"
+     [class.limit-reached]="columnLimitState[i].limitReached">
+    <app-task-card *ngFor="let task of col?.tasks"
+                   cdkDrag
+                   [cdkDragData]="task"
+                   [task]="task"
+                   (editClicked)="openEditTaskView($event)"
+                   (deleteClicked)="emitTaskDeletion($event)"></app-task-card>
+</div>

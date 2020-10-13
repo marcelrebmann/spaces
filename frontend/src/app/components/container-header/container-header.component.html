@@ -1,0 +1,8 @@
+<div class="container-header">
+    <h1>{{titleKey | translate}}</h1>
+    <div *ngIf="showSubheader"
+         class="subheader">
+        <i [class]="subheaderIconClass"></i>
+        <span>{{subheaderText}}</span>
+    </div>
+</div>

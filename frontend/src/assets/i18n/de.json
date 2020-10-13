@@ -1,0 +1,146 @@
+{
+    "common": {
+        "title": "Super Kanban Board",
+        "module": "Modul",
+        "edit": "Bearbeiten",
+        "delete": "Löschen"
+    },
+    "navigation": {
+        "home": "Startseite",
+        "createModule": "Modul anlegen",
+        "createTask": "Aufgabe anlegen",
+        "createColumn": "Spalte anlegen",
+        "changeLanguage": "EN"
+    },
+    "home": {
+        "title": "Board",
+        "buttons": {
+            "addTask": "Aufgabe hinzufügen",
+            "deleteModule": "Modul löschen",
+            "editModule": "Modul bearbeiten",
+            "editTask": "Aufgabe bearbeiten",
+            "deleteTask": "Aufgabe löschen",
+            "createModule": "Neues Modul",
+            "createColumn": "Neue Spalte"
+        },
+        "widgets": {
+            "column": {
+                "title": "Oh, hier sieht es ein wenig leer aus!<br>Starte am besten, indem du deine erste Spalte hinzufügst oder lass dir ein Standard Kanban-Board Layout erstellen.",
+                "custom": "Neue Spalte",
+                "kanban": "Kanban-Board"
+            },
+            "module": {
+                "title": "Füge ein Modul zum Board hinzu, um Aufgaben zu erstellen und den Fortschritt festzuhalten",
+                "addModule": "Modul erstellen"
+            }
+        }
+    },
+    "task": {
+        "fields": {
+            "name": "Name",
+            "description": "Beschreibung",
+            "module": "Modul",
+            "status": "Status"
+        },
+        "placeholder": {
+            "name": "Benenne die Aufgabe...",
+            "description": "Beschreibe die Aufgabe...",
+            "module": "Wähle ein Modul...",
+            "column": "Wähle einen Status..."
+        },
+        "edit": {
+            "title": "Aufgabe bearbeiten",
+            "submit": "Aufgabe aktualisieren"
+        },
+        "create": {
+            "title": "Neue Aufgabe",
+            "submit": "Aufgabe erstellen"
+        },
+        "hints": {
+            "taskNameInvalid": "Bitte gib einen Namen für die Aufgabe an.",
+            "taskDescriptionInvalid": "Bitte gib eine Beschreibung für die Aufgabe an."
+        }
+    },
+    "module": {
+        "fields": {
+            "name": "Name"
+        },
+        "placeholder": {
+            "name": "Benenne das Modul..."
+        },
+        "edit": {
+            "title": "Modul bearbeiten",
+            "submit": "Modul aktualisieren"
+        },
+        "create": {
+            "title": "Neues Modul",
+            "submit": "Modul erstellen"
+        },
+        "hints": {
+            "moduleNameInvalid": "Bitte gib einen Namen für das Modul an."
+        }
+    },
+    "column": {
+        "fields": {
+            "name": "Name",
+            "limit": "Aufgaben-Limit"
+        },
+        "placeholder": {
+            "name": "Benenne die Spalte...",
+            "limit": "Max. Anzahl zugeordneter Aufgaben"
+        },
+        "edit": {
+            "title": "Spalte bearbeiten",
+            "submit": "Spalte aktualisieren"
+        },
+        "create": {
+            "title": "Neue Spalte",
+            "submit": "Spalte erstellen"
+        },
+        "hints": {
+            "columnNameInvalid": "Bitte gib einen Namen für die Spalte an.",
+            "columnLimitNegative": "Das Limit muss größer gleich 0 sein. (0 entspricht keinem Limit)"
+        }
+    },
+    "toasts": {
+        "success": {
+            "createTask": "Aufgabe wurde erstellt.",
+            "updateTask": "Aufgabe wurde aktualisiert.",
+            "deleteTask": "Aufgabe wurde gelöscht.",
+            "createModule": "Modul wurde erstellt.",
+            "updateModule": "Modul wurde aktualisiert.",
+            "deleteModule": "Modul wurde gelöscht.",
+            "createColumn": "Spalte wurde erstellt.",
+            "updateColumn": "Spalte wurde aktualisiert.",
+            "deleteColumn": "Spalte wurde gelöscht.",
+            "kanbanColumnsCreated": "Kanban-Board Layout angelegt."
+        },
+        "error": {
+            "loadAllDataFailed": "Daten konnten nicht geladen werden.",
+            "loadAllTasksFailed": "Aufgaben konnten nicht geladen werden.",
+            "loadAllModulesFailed": "Module konnten nicht geladen werden.",
+            "loadAllColumnsFailed": "Spalten konnten nicht geladen werden.",
+            "noTaskFound": "Aufgabe [ {{taskId}} ] konnte nicht gefunden werden.",
+            "noModuleFound": "Modul [ {{moduleId}} ] konnte nicht gefunden werden.",
+            "noColumnFound": "Spalte [ {{columnId}} ] konnte nicht gefunden werden.",
+            "createTaskFailed": "Aufgabe konnte nicht erstellt werden.",
+            "updateTaskFailed": "Aufgabe konnte nicht aktualisiert werden.",
+            "deleteTaskFailed": "Aufgabe konnte nicht gelöscht werden.",
+            "createModuleFailed": "Modul konnte nicht erstellt werden.",
+            "updateModuleFailed": "Modul konnte nicht aktualisiert werden.",
+            "deleteModuleFailed": "Modul konnte nicht gelöscht werden.",
+            "createColumnFailed": "Spalte konnte nicht erstellt werden.",
+            "updateColumnFailed": "Spalte konnte nicht aktualisiert werden.",
+            "deleteColumnFailed": "Spalte konnte nicht gelöscht werden.",
+            "columnContainsEntries": "Spalte konnte nicht gelöscht werden, da sie noch Aufgaben enthält.",
+            "timeout": "Es konnte keine Verbindung zum Server hergestellt werden.",
+            "taskNameExists": "Es existiert bereits eine Aufgabe mit diesem Namen. Bitte wähle einen anderen.",
+            "moduleNameExists": "Es existiert bereits ein Modul mit diesem Namen. Bitte wähle einen anderen.",
+            "columnNameExists": "Es existiert bereits eine Spalte mit diesem Namen. Bitte wähle einen anderen.",
+            "createKanbanColumnsFailed": "Kanban-Spalten konnten nicht erstellt werden."
+        },
+        "info": {
+            "deleteModuleConfirm": "Möchten Sie wirklich dieses Modul löschen? Aufgaben werden ebenfalls entfernt."
+        }
+    }
+}

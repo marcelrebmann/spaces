@@ -1,0 +1,413 @@
+@import "colors";
+/* You can add global styles to this file, and also import other style files */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $background-lighter;
+    padding-top: 75px;
+    overflow: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 1px solid lightgray;
+
+    &:focus {
+        border: 1px solid $primary-blue-lighter;
+        outline: 0 none;
+    }
+}
+
+input, textarea {
+    &.ng-valid[required], .ng-valid.required {
+        border-left: 5px solid $success-darker;
+        padding-left: 6px;
+    }
+
+    &.ng-invalid:not(form):not(.ng-pristine) {
+        border-left: 5px solid $error;
+        padding-left: 6px;
+    }
+}
+
+textarea {
+    resize: none;
+}
+
+select {
+    height: 40px;
+}
+
+label.required:after {
+    content: "\002A";
+}
+
+div.input-hint {
+    font-size: 14px;
+    padding: 10px;
+
+    &.error {
+        color: $error;
+    }
+}
+
+.main-logo {
+    display: inline-block;
+    height: 50px;
+    width: 150px;
+    background: url("assets/images/spaces_logo_font.png") no-repeat center center;
+    background-size: contain;
+}
+
+div.container-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    form {
+        padding: 16px;
+        width: 100%;
+        max-width: 715px;
+        display: flex;
+        flex-direction: column;
+
+        label {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 30px 0 10px 0;
+        }
+    }
+
+    button {
+        margin-top: 30px;
+    }
+}
+
+div.column {
+    display: flex;
+    flex: 1;
+    padding: 10px;
+    min-height: 120px;
+    min-width: 320px;
+    max-width: 661px;
+    border-left: 1px solid $background-darker;
+
+    > div {
+        display: flex;
+        align-items: center;
+
+        > button:not(:last-of-type) {
+            margin-right: 8px;
+        }
+    }
+}
+
+div.title-column {
+    max-width: 400px;
+    border-left: none;
+    border-right: 1px solid $background-darker;
+}
+
+span.title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+i.type-icon {
+    color: $primary-blue-lighter;
+    font-size: 20px;
+    margin-right: 5px;
+
+    &.module {
+        color: $module-icon-color;
+    }
+
+    &.task {
+        color: $task-icon-color;
+    }
+
+    &.column {
+        color: $column-icon-color;
+    }
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 16px;
+    background-color: $primary-blue-lighter;
+    color: $white;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 5px;
+    margin: 1px;
+
+    &:hover {
+        background-color: $primary-blue-hover;
+    }
+
+    &.secondary {
+        background-color: $error-lighter;
+
+        &:hover {
+            background-color: $error;
+        }
+    }
+
+    &.inverted {
+        color: $primary-blue-lighter;
+        background-color: transparent;
+        border: 1px solid $primary-blue-lighter;
+
+        &:hover {
+            background-color: $background;
+        }
+    }
+
+    &:disabled {
+        background-color: $background-darker;
+
+        &:hover {
+            background-color: $background-darker;
+        }
+    }
+
+    &.full-width {
+        width: 100%;
+    }
+
+    i {
+        margin-right: 5px;
+    }
+}
+
+// Use this to display a clickable icon.
+button.icon-button {
+    padding: 0;
+    height: 40px;
+    width: 40px;
+    font-size: 24px;
+    background-color: $background;
+    color: $primary-blue-lighter;
+
+    i {
+        margin: 0;
+    }
+
+    &:hover {
+        background-color: $background-hover;
+    }
+
+    &.white-hover {
+        &:hover {
+            background-color: $white;
+        }
+    }
+
+    &.error {
+        color: $error;
+    }
+
+    &.success {
+        color: $success-darker;
+    }
+
+    &.round {
+        border-radius: 100%;
+    }
+
+    &.md {
+        height: 32px;
+        width: 32px;
+        font-size: 20px;
+    }
+
+    &.sm {
+        height: 28px;
+        width: 28px;
+        font-size: 18px;
+    }
+
+    &.xs {
+        height: 24px;
+        width: 24px;
+        font-size: 16px;
+    }
+}
+
+// Use this to display a non-clickable icon.
+div.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 80px;
+    font-size: 40px;
+    background-color: $background;
+    user-select: none;
+
+    &.round {
+        border-radius: 100%;
+    }
+
+    &.primary {
+        color: $primary-blue-lighter;
+    }
+
+    &.error {
+        color: $error;
+    }
+
+    &.success {
+        color: $success-darker;
+    }
+
+    &.ml {
+        height: 60px;
+        width: 60px;
+        font-size: 28px;
+    }
+
+    &.md {
+        height: 32px;
+        width: 32px;
+        font-size: 20px;
+    }
+
+    &.sm {
+        height: 28px;
+        width: 28px;
+        font-size: 18px;
+    }
+
+    &.xs {
+        height: 24px;
+        width: 24px;
+        font-size: 16px;
+    }
+}
+
+// The help widgets
+div.widget-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px 20px 20px;
+
+    div.widget-title {
+        max-width: 600px;
+        text-align: center;
+        font-weight: lighter;
+        font-size: 18px;
+        padding: 20px;
+    }
+
+    div.widget-action-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 400px;
+        padding: 20px;
+    }
+
+    div.widget-action {
+        height: 180px;
+        width: 140px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid $background-darker;
+        border-radius: 5px;
+        padding: 20px;
+        user-select: none;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        div.icon.round {
+            background-color: $background-darker;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        span {
+            text-align: center;
+            font-weight: bold;
+            color: $toast-bg;
+            transition: all 0.3s;
+        }
+
+        &:hover {
+            border: 1px solid $primary-blue-lighter;
+
+            div.icon.round {
+                background-color: $primary-blue-lighter;
+            }
+
+            span {
+                color: $primary-blue-lighter;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 735px) {
+    body {
+        padding-top: 91px;
+    }
+}
+
+
+// This is necessary for dragula
+/* in-flight clone */
+.gu-mirror {
+    position: fixed !important;
+    margin: 0 !important;
+    z-index: 9999 !important;
+    opacity: 0.8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80);
+    pointer-events: none;
+}
+
+/* high-performance display:none; helper */
+.gu-hide {
+    left: -9999px !important;
+}
+
+/* added to mirrorContainer (default = body) while dragging */
+.gu-unselectable {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+}
+
+/* added to the source element while its mirror is dragged */
+.gu-transit {
+    opacity: 0.2;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+    filter: alpha(opacity=20);
+}

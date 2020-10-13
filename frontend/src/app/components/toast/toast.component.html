@@ -1,0 +1,17 @@
+<div class="toast-wrapper">
+    <div [class]="'toast-container ' + type">
+        <div *ngIf="duration"
+             #durationLine
+             class="duration-line"
+             [style.transition]="'width ' + duration + 'ms'"></div>
+        <span class="toast-content"
+              translate
+              [translateParams]="translateParams">{{message}}</span>
+        <div class="toast-actions">
+            <div *ngFor="let action of actions, let i = index" class="action">
+                <i [class]="actionIconMap[action.type]"
+                   (click)="performAction(i)"></i>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<div>
+    <app-loading-spinner *ngIf="showLoading"></app-loading-spinner>
+    <app-container-header titleKey="home.title"></app-container-header>
+    <app-kanban-board [data]="mergedKanbanData$ | async"
+                      [columns]="columnsWithLimits$ | async"
+                      (deleteTask)="deleteTask($event)"
+                      (deleteColumn)="deleteColumn($event)"
+                      (deleteModule)="deleteModule($event)"
+                      (taskDropped)="updateTaskAfterDragDrop($event)"
+                      (createKanbanLayout)="createKanbanLayout()">
+    </app-kanban-board>
+</div>

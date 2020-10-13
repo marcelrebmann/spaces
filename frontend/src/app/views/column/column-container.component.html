@@ -1,0 +1,41 @@
+<div class="container-content">
+    <app-loading-spinner *ngIf="showLoading"></app-loading-spinner>
+    <app-container-header [titleKey]="containerTitleKey"
+                          [subheaderText]="'#' + columnModel._id"
+                          [showSubheader]="mode === viewMode.EDIT"
+                          subheaderIconClass="mdi mdi-table-column type-icon column"></app-container-header>
+    <form (ngSubmit)="handleSubmit()">
+        <label class="required"
+               for="column-name">{{"column.fields.name" | translate}}</label>
+        <input #name="ngModel"
+               placeholder="{{'column.placeholder.name' | translate}}"
+               id="column-name"
+               name="name"
+               maxlength="20"
+               required
+               appAutofocus
+               pattern=".+"
+               [(ngModel)]="columnModel.name">
+        <div [hidden]="name.valid || name.pristine"
+             class="input-hint error">{{"column.hints.columnNameInvalid" | translate}}</div>
+        <label class="required"
+               for="column-limit">{{"column.fields.limit" | translate}}</label>
+        <input #limit="ngModel"
+               placeholder="{{'column.placeholder.limit' | translate}}"
+               id="column-limit"
+               name="limit"
+               type="number"
+               min="0"
+               step="1"
+               pattern="[0-9]+"
+               required
+               [(ngModel)]="columnModel.limit">
+        <div [hidden]="limit.pristine || limit.value >= 0"
+             class="input-hint error">{{"column.hints.columnLimitNegative" | translate}}</div>
+        <button type="submit"
+                [disabled]="!columnModel.name || columnModel.limit < 0 || columnModel.limit == null     ">
+            {{(mode === viewMode.CREATE ? "column.create.submit" : "column.edit.submit") | translate}}
+        </button>
+    </form>
+</div>
+
