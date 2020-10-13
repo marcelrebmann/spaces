@@ -8,6 +8,8 @@ A lightweight flexible Kanban Board Application made with Angular, Node.JS and M
 - Quick action widgets for creating the first columns and modules
 - Mobile friendly
 
+![App Screenshot](./frontend/src/assets/images/spaces_screenshot.png)
+
 ### Compatibility
 *Desktop*
 Developed and tested with Chromium Browsers.
